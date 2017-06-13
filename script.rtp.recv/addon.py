@@ -33,7 +33,7 @@ xbmc.audioSuspend()
 subprocess.call(['pactl', 'load-module' , 'module-udev-detect'])
 time.sleep(2)
 subprocess.call(['pactl', 'load-module' , 'module-rtp-recv'])
-time.sleep(2)
+time.sleep(5)
 
 # Can't assume that either of these settings were loaded
 #xbmcgui.Dialog().ok(addonname, 
@@ -71,5 +71,4 @@ labels = [ l['label'] for l in settings[120]['options'] ]
 
 line = '\n'.join(labels)
 
-#xbmcgui.Dialog().ok(addonname, line)
 xbmcgui.Dialog().ok(addonname, "Done.")
