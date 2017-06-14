@@ -6,6 +6,10 @@ import subprocess
 import json
 import time
  
+# Open dialog box through the duration of the script
+dialog = xbmcgui.DialogProgressBG()
+dialog.create( 'Please wait...', 'Turning streaming on' )
+
 addon       = xbmcaddon.Addon()
 addonname   = addon.getAddonInfo('name')
 addonpath   = addon.getAddonInfo('path')
@@ -71,4 +75,5 @@ labels = [ l['label'] for l in settings[120]['options'] ]
 
 line = '\n'.join(labels)
 
-xbmcgui.Dialog().ok(addonname, "Done.")
+# Close the dialog box
+dialog.close()
